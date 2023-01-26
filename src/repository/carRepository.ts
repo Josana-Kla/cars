@@ -35,7 +35,11 @@ async function createCar(model: string, licensePlate: string, year: string, colo
 }
 
 async function deleteCar(id: number) {
-  /* await db.query(`DELETE FROM cars WHERE id = $1`, [id]); */
+  await prisma.cars.delete({
+    where: {
+      id: id
+    }
+  })
 }
 
 const carRepository = {
@@ -43,7 +47,7 @@ const carRepository = {
   getCarWithLicensePlate,
   getCars,
   createCar,
-  /* deleteCar */
+  deleteCar
 }
 
 export default carRepository;
