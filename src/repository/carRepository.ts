@@ -6,8 +6,12 @@ async function getCars() {
 }
 
 async function getCar(id: number) {
-  /* const data = await db.query(`SELECT * FROM cars WHERE id = $1`, [id]);
-  return data.rows[0]; */
+  const data = await prisma.cars.findUnique({
+    where: {
+      id: id
+    }
+  })
+  return data;
 }
 
 async function getCarWithLicensePlate(licensePlate: string) {
@@ -28,8 +32,8 @@ async function deleteCar(id: number) {
 }
 
 const carRepository = {
-  /* getCar,
-  getCarWithLicensePlate, */
+  getCar,
+  /* getCarWithLicensePlate, */
   getCars,
   /* createCar,
   deleteCar */
