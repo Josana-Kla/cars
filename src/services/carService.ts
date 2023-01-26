@@ -16,7 +16,7 @@ async function getCar(id: number) {
   return car;
 }
 
-/* async function createCar(model: string, licensePlate: string, year: number, color: string) {
+async function createCar(model: string, licensePlate: string, year: string, color: string) {
   const car = await carRepository.getCarWithLicensePlate(licensePlate);
   if (car) {
     throw conflictError(`Car with license plate ${licensePlate} already registered.`)
@@ -25,7 +25,7 @@ async function getCar(id: number) {
   await carRepository.createCar(model, licensePlate, year, color);
 }
 
-async function deleteCar(id: number) {
+/* async function deleteCar(id: number) {
   await getCar(id);
   await carRepository.deleteCar(id);
 } */
@@ -33,8 +33,8 @@ async function deleteCar(id: number) {
 const carService = {
   getCars,
   getCar,
-  /* createCar,
-  deleteCar */
+  createCar,
+  /* deleteCar */
 }
 
 export default carService;

@@ -25,7 +25,7 @@ async function getSpecificCar(req: Request, res: Response) {
   }
 }
 
-/* async function createCar(req: Request, res: Response) {
+async function createCar(req: Request, res: Response) {
   const { model, licensePlate, year, color } = req.body;
 
   try {
@@ -41,7 +41,7 @@ async function getSpecificCar(req: Request, res: Response) {
   }
 }
 
-async function deleteCar(req: Request, res: Response) {
+/* async function deleteCar(req: Request, res: Response) {
   const carId = parseInt(req.params.carId);
 
   try {
@@ -60,8 +60,8 @@ async function deleteCar(req: Request, res: Response) {
 const carController = {
   getAllCars,
   getSpecificCar,
-  /* createCar,
-  deleteCar */
+  createCar,
+  /* deleteCar */
 }
 
 export default carController;
